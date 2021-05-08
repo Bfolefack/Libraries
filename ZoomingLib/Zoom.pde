@@ -10,17 +10,17 @@ class Zoom {
   }
   
   
-  void edgePan(){
+  void edgePan(float speed){
     if(mouseX > width - 75){
-      xPan += 10; 
+      xPan += speed; 
     } else if (mouseX < 75){
-      xPan -= 10; 
+      xPan -= speed; 
     }
     
     if(mouseY > height - 75){
-      yPan += 10; 
+      yPan += speed; 
     } else if (mouseY < 75){
-      yPan -= 10; 
+      yPan -= speed; 
     }
   }
   

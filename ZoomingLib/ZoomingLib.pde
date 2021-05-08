@@ -10,7 +10,7 @@ void setup(){
 void draw(){
   background(0);
   ellipse(width/2, height/2, 30, 30);
-  zoomer.edgePan();
+  zoomer.edgePan(5);
   zoomer.keyScale();
   zoomer.pushZoom();
     ellipse(width/2, height/2, 30, 30);
