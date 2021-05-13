@@ -43,8 +43,8 @@ class Agent {
    
    float d = desired.mag();
    
-   if(d < 100){
-     float m =  map(d, 0, 100, 0, maxSpeed);
+   if(d < 20){
+     float m =  map(d, 0, 20, 0, maxSpeed);
      desired.setMag(m);
    } else {
      desired.setMag(maxSpeed);
