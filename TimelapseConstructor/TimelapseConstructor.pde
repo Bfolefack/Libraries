@@ -5,14 +5,15 @@ boolean paused;
 float truMouseX;
 float truMouseY;
 int numOfPhotos;
+int offset = 0;
 Zoom zoomer;
 
-String folder = "TimeLapse2/";
+String folder = "";
 void setup() {
   size(1000, 1000);
   int count = 1;
   while (true) {
-    File f = dataFile(folder + count + ".jpg");
+    File f = dataFile(folder + (count + offset) + ".jpg");
     String filePath = f.getPath();
     boolean exist = f.isFile();
     //println(filePath, exist);
@@ -33,7 +34,7 @@ void draw(){
   background(0);
   zoomer.pushZoom();
   zoomer.mousePan();
-  image(loadImage(folder + ""  + (abs(frameCount % numOfPhotos) + 1) + ".jpg"), 0, 0);
+  image(loadImage(folder + ""  + (abs(frameCount % numOfPhotos) + 1 + offset) + ".jpg"), 0, 0);
   if(paused){
     frameCount--;
   }
